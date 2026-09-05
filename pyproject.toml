@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "subdomainx"
+version = "1.0.0"
+description = "Passive subdomain discovery and asset intelligence aggregator (defensive security / OSINT)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "SUBDOMAINX contributors" }]
+keywords = [
+    "subdomain",
+    "reconnaissance",
+    "osint",
+    "bugbounty",
+    "asset-inventory",
+    "certificate-transparency",
+    "passive-dns",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Internet :: Name Service (DNS)",
+]
+dependencies = [
+    "requests>=2.31.0,<3.0.0",
+    "dnspython>=2.4.0,<3.0.0",
+    "tldextract>=5.0.0,<6.0.0",
+    "beautifulsoup4>=4.12.0,<5.0.0",
+    "pydantic>=2.5.0,<3.0.0",
+    "rich>=13.7.0,<14.0.0",
+    "idna>=3.6,<4.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4.0,<9.0.0"]
+
+[project.scripts]
+subdomainx = "subdomainx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mrdineshpathro-dot/SUBDOMAINX"
+Source = "https://github.com/mrdineshpathro-dot/SUBDOMAINX"
+
+[tool.setuptools.packages.find]
+include = ["subdomainx*"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
