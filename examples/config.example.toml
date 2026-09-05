@@ -1,0 +1,69 @@
+# SUBDOMAINX example configuration
+#
+# Copy to ./config.toml (or pass --config path/to/file.toml).
+# Every value below is optional - the defaults work out of the box.
+#
+# No secrets: SUBDOMAINX never uses API keys or credentials.
+
+[general]
+threads = 10
+timeout = 10
+retries = 2
+profile = "balanced"          # fast | balanced | deep
+user_agent = "SubdomainX/1.0 (authorized security reconnaissance)"
+rate_limit = 1.0
+verify_tls = true
+
+[dns]
+enabled = true
+threads = 10
+timeout = 5.0
+retries = 1
+nameservers = []              # empty = use the system resolvers
+detect_wildcard = true
+dnssec = false                # enabled automatically by the "deep" profile
+record_types = ["A", "AAAA", "CNAME", "MX", "NS", "TXT", "CAA"]
+
+[http]
+enabled = false
+threads = 10
+timeout = 8.0
+max_body_size = 1000000       # bytes kept per response
+verify_tls = true
+fallback_http = true
+capture_tls = false           # collect certificate metadata (deep profile)
+
+[cache]
+enabled = true
+ttl = 86400                   # seconds
+path = ".cache"
+
+[storage]
+enabled = true
+path = "subdomainx.db"
+
+[sources]
+# Set a source to false to disable it permanently.
+anubis = true
+bufferover = true
+certspotter = true
+commoncrawl = true
+crtsh = true
+dnsdumpster = true
+hackertarget = true
+otx = true
+rapiddns = true
+# securitytrails requires an API key and is never executed
+securitytrails = false
+subdomaincenter = true
+threatcrowd = true
+threatminer = true
+urlscan = true
+# virustotal requires an API key and is never executed
+virustotal = false
+wayback = true
+
+[output]
+format = "txt"                # txt | json | csv | html
+profile = "standard"          # minimal | standard | detailed
+color = true

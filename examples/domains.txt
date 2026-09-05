@@ -1,0 +1,7 @@
+# Example target list for `subdomainx --input domains.txt`
+#
+# One domain per line.  Lines starting with '#' are ignored.
+# Only use domains you are authorised to assess.
+example.com
+example.org
+example.co.uk

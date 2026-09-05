@@ -1,0 +1,37 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# SUBDOMAINX runtime artifacts
+.cache/
+*.db
+*.sqlite
+*.sqlite3
+subdomainx.db
+*.log
+report.html
+subdomainx_report.html
+output/
+results/
+.env
